@@ -1,0 +1,12 @@
+Id                : /subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourcegroups/vzCustomImageDemoRG/providers/Microsoft.ManagedIdentity/userAssi
+                    gnedIdentities/aibIdentity1643835709
+ResourceGroupName : vzCustomImageDemoRG
+Name              : aibIdentity1643835709
+Location          : westus2
+TenantId          : 72f988bf-86f1-41af-91ab-2d7cd011db47
+PrincipalId       : 47869b04-7b80-4f03-8dcf-d01a0e750528
+ClientId          : 6cd5e21c-10ab-46fb-b0ea-526996ccb6ca
+ClientSecretUrl   : https://control-westus2.identity.azure.net/subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourcegroups/vzCustomImageDemoRG/pr 
+                    oviders/Microsoft.ManagedIdentity/userAssignedIdentities/aibIdentity1643835709/credentials?tid=72f988bf-86f1-41af-91ab-2d7cd011db47 
+                    &oid=47869b04-7b80-4f03-8dcf-d01a0e750528&aid=6cd5e21c-10ab-46fb-b0ea-526996ccb6ca
+Type              : Microsoft.ManagedIdentity/userAssignedIdentities
