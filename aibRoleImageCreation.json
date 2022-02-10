@@ -10,7 +10,8 @@
 
         "Microsoft.Compute/images/write",
         "Microsoft.Compute/images/read",
-        "Microsoft.Compute/images/delete"
+        "Microsoft.Compute/images/delete",
+        "Microsoft.Authorization/roleAssignments/write"
     ],
     "NotActions": [
   
