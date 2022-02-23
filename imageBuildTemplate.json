@@ -60,14 +60,14 @@
                         "name": "installFsLogix",
                         "runElevated": true,
                         "runAsSystem": true,
-                        "scriptUri": "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/14_Building_Images_WVD/0_installConfFsLogix.ps1"
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/installLogix.ps1"
                     },
                     {
                         "type": "PowerShell",
                         "name": "OptimizeOS",
                         "runElevated": true,
                         "runAsSystem": true,
-                        "scriptUri": "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/14_Building_Images_WVD/1_Optimize_OS_for_WVD.ps1"
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/optimize-OS.ps1"
                     },
                     {
                         "type": "WindowsRestart",
@@ -79,7 +79,7 @@
                         "name": "Install Teams",
                         "runElevated": true,
                         "runAsSystem": true,
-                        "scriptUri": "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/14_Building_Images_WVD/2_installTeams.ps1"
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/installTeams.ps1"
                     },
                     {
                         "type": "WindowsRestart",
@@ -102,7 +102,7 @@
             [
                 {   
                     "type": "SharedImage",
-                    "galleryImageId": "/subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourceGroups/vzCustomImageDemoRG/providers/Microsoft.Compute/galleries/myaibsig01/images/win10wvd",
+                    "galleryImageId": "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.Compute/galleries/<imageGallery>/images/<imageName>",
                     "runOutputName": "sigOutput",
                     "artifactTags": {
                         "source": "server2019",
