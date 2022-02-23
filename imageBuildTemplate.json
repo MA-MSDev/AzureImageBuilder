@@ -47,9 +47,9 @@
         
             "source": {
                 "type": "PlatformImage",
-                    "publisher": "MicrosoftWindowsDesktop",
-                    "offer": "windows-10",
-                    "sku": "20h1-ent",
+                    "publisher": "MicrosoftWindowsServer",
+                    "offer": "WindowsServer",
+                    "sku": "2019-Datacenter",
                     "version": "latest"
             },
             "customize": [
@@ -105,8 +105,8 @@
                     "galleryImageId": "/subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourceGroups/vzCustomImageDemoRG/providers/Microsoft.Compute/galleries/myaibsig01/images/win10wvd",
                     "runOutputName": "sigOutput",
                     "artifactTags": {
-                        "source": "wvd10",
-                        "baseosimg": "windows10"
+                        "source": "server2019",
+                        "baseosimg": "windows-server-2019"
                     },
                     "replicationRegions": [
                       "westus2"
