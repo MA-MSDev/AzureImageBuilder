@@ -104,7 +104,7 @@
             [
                 {   
                     "type": "SharedImage",
-                    "galleryImageId": "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.Compute/galleries/<imageGallery>/images/<imageName>",
+                    "galleryImageId": "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.Compute/galleries/<imageGallery>/images/<imageName>/versions/<imageVersion>",
                     "runOutputName": "<runOutputName>",
                     "artifactTags": {
                         "source": "server2019",
