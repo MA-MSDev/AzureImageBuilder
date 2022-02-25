@@ -33,8 +33,8 @@
             "identity": {
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
-                        "<imgBuilderId>": {}
-                            
+                        "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<imgBuilderName>": {}
+                        // <imgBuilderName>": {}    
                     }
                     },
         
