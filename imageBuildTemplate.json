@@ -2,15 +2,15 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "imageTemplateName": {
-        "type": "string"
-        },
-        "api-version": {
-          "type": "string"
-        },
-        "svclocation": {
-            "type": "string"
-        }
+    //   "imageTemplateName": {
+    //     "type": "string"
+    //     },
+    //     "api-version": {
+    //       "type": "string"
+    //     },
+    //     "svclocation": {
+    //         "type": "string"
+    //     }
     },
     
     "variables": {
@@ -18,10 +18,13 @@
 
     "resources": [
       {
-        "name": "[parameters('imageTemplateName')]",
+        // "name": "[parameters('imageTemplateName')]",
+        "name": "<imageTemplateName>",
         "type": "Microsoft.VirtualMachineImages/imageTemplates",
-        "apiVersion": "[parameters('api-version')]",
-        "location": "[parameters('svclocation')]",
+        // "apiVersion": "[parameters('api-version')]",
+        "apiVersion": "<apiVersion>",
+        // "location": "[parameters('svclocation')]",
+        "location": "<location>",
         "dependsOn": [],
         "tags": {
             "imagebuilderTemplate": "AzureImageBuilderSIG",
