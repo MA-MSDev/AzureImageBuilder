@@ -111,7 +111,7 @@
                         "baseosimg": "windows-server-2019"
                     },
                     "replicationRegions": [
-                      "<replicationRegion>"
+                    //   "<replicationRegion>"
 
                     ]
                 }
