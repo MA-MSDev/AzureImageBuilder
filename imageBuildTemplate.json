@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "imageTemplateName": {
-        "type": "string",
+        "type": "string"
         },
         "api-version": {
           "type": "string"
@@ -15,7 +15,6 @@
     
     "variables": {
     },
-// Test
 
     "resources": [
       {
