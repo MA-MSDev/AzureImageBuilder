@@ -4,7 +4,6 @@
     "parameters": {
       "imageTemplateName": {
         "type": "string",
-          "defaultValue": <imgTempName>
         },
         "api-version": {
           "type": "string"
@@ -110,7 +109,7 @@
                         "baseosimg": "windows-server-2019"
                     },
                     "replicationRegions": [
-                      "<region1>"
+                      "<replicationRegion>"
 
                     ]
                 }
