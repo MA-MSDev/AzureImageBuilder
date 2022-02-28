@@ -33,7 +33,8 @@
             "identity": {
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
-                        "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<imgBuilderName>": {}
+                        // "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<imgBuilderName>": {}
+                        "/subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourceGroups/SamTestRg01/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vzAIBIdenity123": {}
                         // <imgBuilderName>": {}    
                     }
                     },
