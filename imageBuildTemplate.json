@@ -88,8 +88,7 @@
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post Teams Install'",
                         "restartTimeout": "5m"
-                    },
-                        
+                    },                        
                     {
                         "type": "WindowsUpdate",
                         "searchCriteria": "IsInstalled=0",
@@ -98,6 +97,13 @@
                             "include:$true"
                                     ],
                         "updateLimit": 40
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "Install Azure CLI",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/az-cli-install.ps1"
                     }
 
             ],
