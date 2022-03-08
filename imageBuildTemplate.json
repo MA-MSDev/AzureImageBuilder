@@ -55,40 +55,7 @@
                     "sku": "2019-Datacenter",
                     "version": "latest"
             },
-            "customize": [
-
-        
-                    {
-                        "type": "PowerShell",
-                        "name": "installFsLogix",
-                        "runElevated": true,
-                        "runAsSystem": true,
-                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/installLogix.ps1"
-                    },
-                    {
-                        "type": "PowerShell",
-                        "name": "OptimizeOS",
-                        "runElevated": true,
-                        "runAsSystem": true,
-                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/optimize-OS.ps1"
-                    },
-                    {
-                        "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post Optimizations'",
-                        "restartTimeout": "5m"
-                    },
-                    {
-                        "type": "PowerShell",
-                        "name": "Install Teams",
-                        "runElevated": true,
-                        "runAsSystem": true,
-                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/installTeams.ps1"
-                    },
-                    {
-                        "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post Teams Install'",
-                        "restartTimeout": "5m"
-                    },                        
+            "customize": [                    
                     {
                         "type": "WindowsUpdate",
                         "searchCriteria": "IsInstalled=0",
@@ -118,6 +85,11 @@
                         "runElevated": true,
                         "runAsSystem": true,
                         "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/pwshCore-install.ps1"
+                    },
+                    {
+                        "type": "WindowsRestart",
+                        "restartCheckCommand": "write-host 'restarting post software installation'",
+                        "restartTimeout": "5m"
                     }
             ],
             "distribute": 
