@@ -94,6 +94,13 @@
                         "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/pwsh-azModule-install.ps1"
                     },
                     {
+                        "type": "PowerShell",
+                        "name": "Install PowerShell Windows Update Module",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/pwsh-windowsUpdate.ps1"
+                    },
+                    {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post software installation'",
                         "restartTimeout": "5m"
