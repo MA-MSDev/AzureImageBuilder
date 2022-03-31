@@ -64,7 +64,47 @@
                             "include:$true"
                                     ],
                         "updateLimit": 40
-                    }           
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "Install Azure CLI",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/az-cli-install.ps1"
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "Install .Net",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/dotnet-install.ps1"
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "Install PowerShell Core",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/pwshCore-install.ps1"
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "Install PowerShell Az Module",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/pwsh-azModule-install.ps1"
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "Install PowerShell Windows Update Module",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/pwsh-windowsUpdate.ps1"
+                    },
+                    {
+                        "type": "WindowsRestart",
+                        "restartCheckCommand": "write-host 'restarting post software installation'",
+                        "restartTimeout": "5m"
+                    }
             ],
             "distribute": 
             [
