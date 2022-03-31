@@ -40,7 +40,7 @@
                     },
         
         "properties": {
-            "buildTimeoutInMinutes" : 120,
+            "buildTimeoutInMinutes" : 300,
 
             "vmProfile": 
                     {
