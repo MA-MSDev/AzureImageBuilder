@@ -34,7 +34,7 @@
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
                         // "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<imgBuilderName>": {}
-                        "/subscriptions/<subscription>/resourcegroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<identityName>": {}
+                        "/subscriptions/<identitySubscription>/resourcegroups/<identityResourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<identityName>": {}
                         // <imgBuilderName>": {}    
                     }
                     },
@@ -47,7 +47,7 @@
                     "vmSize": "Standard_D2_v2",
                     "osDiskSizeGB": 127,
                         "vnetConfig": {
-                    "subnetId": "/subscriptions/<subscriptionID>/resourceGroups/<vnetRgName>/providers/Microsoft.Network/virtualNetworks/<vnetName>/subnets/<subnetName>"
+                    "subnetId": "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.Network/virtualNetworks/<vnetName>/subnets/<subnetName>"
                 }
                     },
         
