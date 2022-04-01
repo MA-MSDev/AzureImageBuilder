@@ -34,7 +34,7 @@
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
                         // "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<imgBuilderName>": {}
-                        "/subscriptions/<identitySubscription>/resourcegroups/<identityResourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<identityName>": {}
+                        "/subscriptions/<identitySubscription>/resourceGroups/<identityResourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<identityName>": {}
                         // <imgBuilderName>": {}    
                     }
                     },
