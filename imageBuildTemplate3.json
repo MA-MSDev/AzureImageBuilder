@@ -33,7 +33,7 @@ ema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate
                 "type": "UserAssigned",
                         "userAssignedIdentities": {
                         // "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<imgBuilderName>": {}
-                        "/subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourcegroups/testRG211/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vzAnsibleMSI": {}
+                        "/subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourcegroups/aibDevOpsBuildRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aibIdentity-aibDevOpsBuildRG": {}
                         // <imgBuilderName>": {}    
                     }
                     },
