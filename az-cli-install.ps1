@@ -8,4 +8,23 @@ Remove-Item .\AzureCLI.msi
 
 dir env:
 
+$URLList = "https://gitlab.verizon.com/scs/azure-acf", "https://oneartifactoryprod.verizon.com/ui/packages"
+
+$result = foreach ($uri in $URLList) {
+    try{
+        $res = Invoke-WebRequest -Uri $uri -UseDefaultCredentials -UseBasicParsing -Method Head -TimeoutSec 5 -ErrorAction Stop
+        $status = [int]$res.StatusCode
+    }
+    catch {
+        $status = [int]$_.Exception.Response.StatusCode.value__
+    }
+    # output a formatted string to capture in variable $result
+    "$status - $uri"
+}
+
+# output on screen
+$result
+
+
+
 #rm .\AzureCLI.msi
