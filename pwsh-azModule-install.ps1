@@ -1,4 +1,4 @@
-Get-InstalledModule
+pwsh -Command {Get-InstalledModule
 
 Write-Host 'Did PowerShellGet install?'
 
@@ -7,3 +7,5 @@ Write-Host 'Did PowerShellGet install?'
 Install-Module -Name Az -Repository PSGallery -Force -AllowClobber
 
 Write-Host 'Completed Az Install'
+
+Get-InstalledModule}
