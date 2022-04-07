@@ -6,11 +6,10 @@
 dir env:
 
 # Get VM Name
-$string=$env:USERNAME
+$string=
 $ResourceGroupName = 'vz-it-np-h5qv-scs04-eastus2-acg-rg'
-Write-Host 'Longbow $($string)'
 
-$vmName = $string.Substring(0,$string.Length-1)
+$vmName = $env:USERNAME
 
 Write-Host 'LongbowName $($vmName)'
 
@@ -23,6 +22,9 @@ $vmInfoPs = Get-AzVM -ResourceGroupName $ResourceGroupName -Name $vmName
 $spID = $vmInfoPs.Identity.PrincipalId
 echo "The managed identity for Azure resources service principal ID is $spID"
 
+Write-Host 'Complete Login'
+
+Set-AzContext -Subscription vz-it-np-h5qv-scs04
 
 # DNS servers
 Write-Host 'Set NIC'
@@ -32,28 +34,7 @@ $nic.DnsSettings.DnsServers.Add('127.0.0.1')
 $nic.DnsSettings.DnsServers.Add('159.67.205.1')
 $nic | Set-AzNetworkInterface
 
-Write-Host 'Complete NIC setup  + $($nic)'
-
-# Check WinRM certificates
-winrm enumerate winrm/config/listener
-
-# Check URL Access
-$URLList = "https://gitlab.verizon.com/scs/azure-acf", "https://oneartifactoryprod.verizon.com/ui/packages"
-
-$result = foreach ($uri in $URLList) {
-    try{
-        $res = Invoke-WebRequest -Uri $uri -UseDefaultCredentials -UseBasicParsing -Method Head -TimeoutSec 5 -ErrorAction Stop
-        $status = [int]$res.StatusCode
-    }
-    catch {
-        $status = [int]$_.Exception.Response.StatusCode.value__
-    }
-    # output a formatted string to capture in variable $result
-    "$status - $uri"
-}
-
-# output on screen
-$result
+Write-Host 'Run Restart'
 
 
 
