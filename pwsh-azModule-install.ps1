@@ -1,11 +1,9 @@
-[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+Get-InstalledModule
+
+Write-Host 'Did PowerShellGet install?'
 
 # Install PowerShell Az Module
 
 Install-Module -Name Az -Repository PSGallery -AllowClobber -Force
 
 Write-Host 'Completed Az Install'
-
-Get-InstalledModule
-
-Write-Host 'Confirm Az Module Installed'
