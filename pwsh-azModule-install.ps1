@@ -2,4 +2,10 @@
 
 # Install PowerShell Az Module
 
-Install-Module -Name Az -Repository PSGallery -AllowClobber -AllowPrerelease -Force -Confirm:$false
+Install-Module -Name Az -Repository PSGallery -AllowClobber -Force
+
+Write-Host 'Completed Az Install'
+
+Get-InstalledModule
+
+Write-Host 'Confirm Az Module Installed'
