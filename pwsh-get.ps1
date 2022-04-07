@@ -1,8 +1,9 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-Install-PackageProvider -Name NuGet -Force
+Install-Module -Name PackageManagement -Repository PSGallery -Force -AllowClobber
 
-Install-Module -Name PowerShellGet -Force
+Install-Module -Name PowerShellGet -Repository PSGallery -Force -AllowClobber
 
 Update-Module -Name PowerShellGet
+
 Exit
