@@ -5,4 +5,6 @@
 
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
+dir env:
+
 Invoke-Expression "& {$(Invoke-RestMethod 'https://aka.ms/install-powershell.ps1')} -Quiet -UseMSI"
