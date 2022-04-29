@@ -29,26 +29,33 @@
 
 # Step 1
 
+## For Teams Custom AIB 
+
+# Additional input 
+
+
 # Step 1: Import module
 Import-Module Az.Accounts
 
 # Step 2: get existing context
 $currentAzContext = Get-AzContext
 
+## TC - NA
 # destination image resource group
 $imageResourceGroup="vzCustomImageDemoRG"
 
 # location (see possible locations in main docs) VZ eastus2 westus2
 $location="eastus2"
 
+## TC - NA
 # your subscription, this will get your current subscription
 $subscriptionID=$currentAzContext.Subscription.Id
 
 # image template name
-$imageTemplateName="vzImageTemplate01"
+$imageTemplateName="vzImageTemplate"
 
 # distribution properties object name (runOutput), i.e. this gives you the properties of the managed image on completion
-$runOutputName="sigOutput"
+$runOutputName="SharedImageGalleryOutput"
 
 # create resource group
 New-AzResourceGroup -Name $imageResourceGroup -Location $location
@@ -56,11 +63,13 @@ New-AzResourceGroup -Name $imageResourceGroup -Location $location
 
 # Step 2
 
+
+
 # setup role def names, these need to be unique
 $timeInt=$((get-date -UFormat "%s").split('.')[0])
 $timeInt
 $imageRoleDefName="AIB Image Def"+$timeInt
-$idenityName="aibIdentity"+$timeInt
+$idenityName="AzImageBuilder"+$timeInt
 
 ## Add AZ PS modules to support AzUserAssignedIdentity and Az AIB
 'Az.ImageBuilder', 'Az.ManagedServiceIdentity', 'Az.Compute' | ForEach-Object {Install-Module -Name $_ -AllowPrerelease}
@@ -132,7 +141,7 @@ New-AzGalleryImageDefinition -GalleryName $sigGalleryName -ResourceGroupName $im
 
 # Download template and configure
 
-$templateUrl="https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/14_Building_Images_WVD/armTemplateWVD.json"
+$templateUrl="https://raw.githubusercontent.com/MS-MADev/AzureImageBuilder/main/armTemplateWVD.json?token=GHSAT0AAAAAABQLP332OL45C24CN32YQ2AIYP5LWRA"
 $templateFilePath = "armTemplateWVD.json"
 
 Invoke-WebRequest -Uri $templateUrl -OutFile $templateFilePath -UseBasicParsing
@@ -171,6 +180,15 @@ $getStatus | Format-List -Property *
 $getStatus.LastRunStatusRunState 
 $getStatus.LastRunStatusMessage
 $getStatus.LastRunStatusRunSubState
+
+
+## Golden Image End
+
+
+
+# Create VM from Custom Image
+
+# See Module
 
 # Clean Up
 
