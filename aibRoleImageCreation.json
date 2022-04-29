@@ -1,5 +1,5 @@
 {
-    "Name": "AIB Image Def1643835709",
+    "Name": "<roleDefName>",
     "IsCustom": true,
     "Description": "Image Builder access to create resources for the image build, you should delete or split out as appropriate",
     "Actions": [
@@ -10,13 +10,14 @@
 
         "Microsoft.Compute/images/write",
         "Microsoft.Compute/images/read",
-        "Microsoft.Compute/images/delete"
+        "Microsoft.Compute/images/delete",
+        "Microsoft.Authorization/roleAssignments/write"
     ],
     "NotActions": [
   
     ],
     "AssignableScopes": [
-      "/subscriptions/afdfb49c-596d-4e6a-b5f4-897b5195a57c/resourceGroups/vzCustomImageDemoRG"
+      "/subscriptions/<subscriptionID>/resourceGroups/<rgName>"
     ]
   }
 

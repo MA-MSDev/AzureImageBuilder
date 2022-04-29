@@ -1,0 +1,93 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    //   "imageTemplateName": {
+    //     "type": "string"
+    //     },
+    //     "api-version": {
+    //       "type": "string"
+    //     },
+    //     "svclocation": {
+    //         "type": "string"
+    //     }
+    },
+    
+    "variables": {
+    },
+
+    "resources": [
+      {
+        // "name": "[parameters('imageTemplateName')]",
+        "name": "<imageTemplateName>",
+        "type": "Microsoft.VirtualMachineImages/imageTemplates",
+        // "apiVersion": "[parameters('api-version')]",
+        "apiVersion": "<apiVersion>",
+        // "location": "[parameters('svclocation')]",
+        "location": "<location>",
+        "dependsOn": [],
+        "tags": {
+            "imagebuilderTemplate": "AzureImageBuilderSIG",
+            "userIdentity": "enabled"
+                },
+            "identity": {
+                "type": "UserAssigned",
+                        "userAssignedIdentities": {
+                        // "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<imgBuilderName>": {}
+                        "/subscriptions/<identitySubscription>/resourceGroups/<identityResourceGroup>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vz-it-np-h5qv-e-mi": {}
+                        // <imgBuilderName>": {}    
+                    }
+                    },
+        
+        "properties": {
+            "buildTimeoutInMinutes" : 300,
+
+            "vmProfile": 
+                    {
+                    "vmSize": "Standard_D2_v2",
+                    "osDiskSizeGB": 127,
+                        "vnetConfig": {
+                    "subnetId": "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.Network/virtualNetworks/<vnetName>/subnets/<subnetName>"
+                }
+                    },
+        
+            "source": {
+                "type": "PlatformImage",
+                    "publisher": "MicrosoftWindowsServer",
+                    "offer": "WindowsServer",
+                    "sku": "2019-Datacenter",
+                    "version": "latest"
+            },
+            "customize": [                    
+                    {
+                        "type": "WindowsUpdate",
+                        "searchCriteria": "IsInstalled=0",
+                        "filters": [
+                            "exclude:$_.Title -like '*Preview*'",
+                            "include:$true"
+                                    ],
+                        "updateLimit": 40
+                    }
+            ],
+            "distribute": 
+            [
+                {   
+                    "type": "SharedImage",
+                    "galleryImageId": "/subscriptions/<subscription>/resourceGroups/<resourceGroup>/providers/Microsoft.Compute/galleries/<imageGallery>/images/<imageName>/versions/<imageVersion>",
+                    "runOutputName": "<runOutputName>",
+                    "artifactTags": {
+                        "source": "server2019",
+                        "baseosimg": "windows-server-2019"
+                    },
+                    "replicationRegions": [
+                    //   "<replicationRegion>"
+
+                    ]
+                }
+            ]
+            }
+        }
+
+    
+    ]
+}    
